@@ -1,0 +1,26 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem;
+    align-items: center;
+}
+
+.title {
+    font-size: 1.2rem;
+}
+
+.nav {
+    display: flex;
+    gap: 2rem;
+
+    &__link {
+        text-decoration: none;
+        color: black;
+        font-size: 0.8rem;
+    }
+}
+
+.active {
+    font-style: italic;
+    border-bottom: 2px solid black;
+}
