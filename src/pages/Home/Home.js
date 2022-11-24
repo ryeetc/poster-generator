@@ -15,7 +15,16 @@ const Home = () => {
                 setCat(pic)
             })
     }, [])
-   
+
+    const handleClick = () => {
+        const catApi = axios.get("https://api.thecatapi.com/v1/images/search")
+        catApi  
+            .then((response) => {
+                let pic = response.data[0].url
+                setCat(pic)
+            })
+        
+    }
 
     return (
         <div className="home">
@@ -25,7 +34,7 @@ const Home = () => {
                     <img className="main__container--img" src={cat} alt="random cat"></img>
                     <h3 className="main__container--text">Text will go here</h3>
                 </div>
-                <button className="main__button">Generate</button>
+                <button onClick={handleClick} className="main__button">Generate</button>
             </main>
         </div>
     )
